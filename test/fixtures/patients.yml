@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  owner: MyString
+  species: MyString
+  race: MyString
+  gender: MyString
+  blood_type: MyString
+  sterilized: MyString
+  size: MyString
+  activity: MyString
+  weight: 1
+  date_of_birth: 2012-07-14
+  customer: 
+
+two:
+  owner: MyString
+  species: MyString
+  race: MyString
+  gender: MyString
+  blood_type: MyString
+  sterilized: MyString
+  size: MyString
+  activity: MyString
+  weight: 1
+  date_of_birth: 2012-07-14
+  customer: 
