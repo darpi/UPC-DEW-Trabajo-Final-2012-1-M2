@@ -11,8 +11,8 @@
     <th>Talla</th>
     <th>Actividad</th>
     <th>Peso</th>
-    <th>Date of birth</th>
-    <th>Cliente</th>
+    <th>Fecha Nacimiento</th>
+   
     <th></th>
     <th></th>
     <th></th>
@@ -20,7 +20,7 @@
 
 <% @patients.each do |patient| %>
   <tr>
-    <td><%= patient.owner %></td>
+    <td><%= patient.customer %></td>
     <td><%= patient.species %></td>
     <td><%= patient.race %></td>
     <td><%= patient.gender %></td>
@@ -30,7 +30,8 @@
     <td><%= patient.activity %></td>
     <td><%= patient.weight %></td>
     <td><%= patient.date_of_birth %></td>
-    <td><%= patient.customer %></td>
+   
+	
     <td><%= link_to 'Ver Detalle', patient %></td>
     <td><%= link_to 'Editar', edit_patient_path(patient) %></td>
     <td><%= link_to 'Eliminar', patient, confirm: 'Are you sure?', method: :delete %></td>

@@ -1,59 +1,56 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Owner:</b>
-  <%= @patient.owner %>
+  <b>Propietario:</b>
+  <%= @patient.customer.name %>
 </p>
 
 <p>
-  <b>Species:</b>
+  <b>Especie:</b>
   <%= @patient.species %>
 </p>
 
 <p>
-  <b>Race:</b>
+  <b>Raza:</b>
   <%= @patient.race %>
 </p>
 
 <p>
-  <b>Gender:</b>
+  <b>Genero:</b>
   <%= @patient.gender %>
 </p>
 
 <p>
-  <b>Blood type:</b>
+  <b>Tipo_Sangre</b>
   <%= @patient.blood_type %>
 </p>
 
 <p>
-  <b>Sterilized:</b>
+  <b>Esterilizado:</b>
   <%= @patient.sterilized %>
 </p>
 
 <p>
-  <b>Size:</b>
+  <b>Tamano:</b>
   <%= @patient.size %>
 </p>
 
 <p>
-  <b>Activity:</b>
+  <b>Actividad:</b>
   <%= @patient.activity %>
 </p>
 
 <p>
-  <b>Weight:</b>
+  <b>Peso:</b>
   <%= @patient.weight %>
 </p>
 
 <p>
-  <b>Date of birth:</b>
+  <b>Fecha_Nacimiento:</b>
   <%= @patient.date_of_birth %>
 </p>
 
-<p>
-  <b>Customer:</b>
-  <%= @patient.customer.name %>
-</p>
+
 
 
 <%= link_to 'Modificar', edit_patient_path(@patient) %> |

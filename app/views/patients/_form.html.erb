@@ -12,49 +12,46 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
+    <%= f.label :Propietario %><br />
+	<%= f.collection_select :customer_id, Customer.all, :id, :name, :prompt => true %>
   </div>
   <div class="field">
-    <%= f.label :species %><br />
+    <%= f.label :Especie %><br />
     <%= f.text_field :species %>
   </div>
   <div class="field">
-    <%= f.label :race %><br />
+    <%= f.label :Raza %><br />
     <%= f.text_field :race %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br />
+    <%= f.label :Genero %><br />
     <%= f.text_field :gender %>
   </div>
   <div class="field">
-    <%= f.label :blood_type %><br />
+    <%= f.label :Tipo_Sangre %><br />
     <%= f.text_field :blood_type %>
   </div>
   <div class="field">
-    <%= f.label :sterilized %><br />
+    <%= f.label :Esta_Esterilizado %><br />
     <%= f.text_field :sterilized  %>
   </div>
   <div class="field">
-    <%= f.label :size %><br />
+    <%= f.label :Tamano %><br />
     <%= f.text_field :size %>
   </div>
   <div class="field">
-    <%= f.label :activity %><br />
+    <%= f.label :Actividad %><br />
     <%= f.text_field :activity %>
   </div>
   <div class="field">
-    <%= f.label :weight %><br />
+    <%= f.label :Peso %><br />
     <%= f.number_field :weight %>
   </div>
   <div class="field">
-    <%= f.label :date_of_birth %><br />
+    <%= f.label :Fecha_Nacimiento %><br />
     <%= f.date_select :date_of_birth %>
   </div>
-  <div class="field">
-    <%= f.label :customer %><br />
-	<%= f.collection_select :customer_id, Customer.all, :id, :name, :prompt => true %>
-  </div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
