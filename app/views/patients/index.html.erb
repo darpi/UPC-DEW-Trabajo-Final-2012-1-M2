@@ -1,4 +1,4 @@
-<h1>Listing patients</h1>
+<h1>Listado de Pacientes</h1>
 
 <table>
   <tr>
@@ -31,13 +31,18 @@
     <td><%= patient.weight %></td>
     <td><%= patient.date_of_birth %></td>
     <td><%= patient.customer %></td>
-    <td><%= link_to 'Show', patient %></td>
-    <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-    <td><%= link_to 'Destroy', patient, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Ver Detalle', patient %></td>
+    <td><%= link_to 'Editar', edit_patient_path(patient) %></td>
+    <td><%= link_to 'Eliminar', patient, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+<tr>
+  <td align="left"> <h3><%= link_to 'Nuevo Paciente', new_patient_path %> </h3></td>
+</tr>
 </table>
 
 <br />
 
-<%= link_to 'New Patient', new_patient_path %>
+<%= link_to 'Regresar a Home', homes_path %>
+
+

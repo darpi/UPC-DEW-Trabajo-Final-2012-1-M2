@@ -1,4 +1,14 @@
 Mascot::Application.routes.draw do
+  root :to => "homes#index"
+  
+  get "homes/index"
+  get "customers/index"
+  get "doctors/index"
+  get "patients/index"
+  get "prospectus/index"
+  
+  resources :homes
+
   resources :patients
 
   resources :customers

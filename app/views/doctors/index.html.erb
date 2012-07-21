@@ -1,4 +1,4 @@
-<h1>Listing doctors</h1>
+<h1>Listado de Doctores</h1>
 
 <table>
   <tr>
@@ -19,13 +19,18 @@
     <td><%= doctor.mail %></td>
     <td><%= doctor.phone %></td>
     <td><%= doctor.user %></td>
-    <td><%= link_to 'Show', doctor %></td>
-    <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-    <td><%= link_to 'Destroy', doctor, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Ver Detalle', doctor %></td>
+    <td><%= link_to 'Editar', edit_doctor_path(doctor) %></td>
+    <td><%= link_to 'Eliminar', doctor, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+
+<tr>
+  <td align="left"> <h3><%= link_to 'Nuevo Doctor', new_doctor_path %> </h3></td>
+</tr>
 </table>
 
 <br />
 
-<%= link_to 'New Doctor', new_doctor_path %>
+<%= link_to 'Regresar a Home', homes_path %>
+

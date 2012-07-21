@@ -1,4 +1,4 @@
-<h1>Listing prospectus</h1>
+<h1>Listado de Prospectos</h1>
 
 <table>
   <tr>
@@ -21,14 +21,19 @@
     <td><%= prospectu.image %></td>
     <td><%= prospectu.phone %></td>
     <td><%= prospectu.cell_phone %></td>
-    <td><%= link_to 'Show', prospectu %></td>
-    <td><%= link_to 'Edit', edit_prospectu_path(prospectu) %></td>
-    <td><%= link_to 'Destroy', prospectu, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Ver Detalle', prospectu %></td>
+    <td><%= link_to 'Editar', edit_prospectu_path(prospectu) %></td>
+    <td><%= link_to 'Eliminar', prospectu, confirm: 'Are you sure?', method: :delete %></td>
     <td><%= link_to 'Switch to Owner', prospectu, confirm: 'Are you sure?' %></td>
   </tr>
 <% end %>
+<tr>
+  <td align="left"> <h3><%= link_to 'Nuevo Prospecto', new_prospectu_path %> </h3></td>
+</tr>
 </table>
 
 <br />
 
-<%= link_to 'New Prospectu', new_prospectu_path %>
+<%= link_to 'Regresar a Home', homes_path %>
+
+
