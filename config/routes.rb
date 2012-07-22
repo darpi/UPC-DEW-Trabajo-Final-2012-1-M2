@@ -1,5 +1,7 @@
 Mascot::Application.routes.draw do
-  root :to => "homes#index"
+  #root :to => "homes#index"
+  
+  root :to => "webs#index"
   
   get "homes/index"
   get "customers/index"

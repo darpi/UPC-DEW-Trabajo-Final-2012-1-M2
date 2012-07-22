@@ -1,3 +1,7 @@
+function clientes(){
+	window.location = "/customers/index";
+}
+
 //Login.jsp
 
 function login(){
