@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="assets/ie.css" type="text/css">
-        <link rel="stylesheet" href="assets/print.css" type="text/css">
-        <link rel="stylesheet" href="assets/screen.css" type="text/css">
-        <link rel="stylesheet" href="assets/styles.css" type="text/css">
-		<script src="assets/SpryTabbedPanels.js" type="text/javascript"></script>
-		<link href="assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
-        <script language="JavaScript" src="assets/scripts.js"></script>
+        <link rel="stylesheet" href="../assets/ie.css" type="text/css">
+        <link rel="stylesheet" href="../assets/print.css" type="text/css">
+        <link rel="stylesheet" href="../assets/screen.css" type="text/css">
+        <link rel="stylesheet" href="../assets/styles.css" type="text/css">
+		<script src="../assets/SpryTabbedPanels.js" type="text/javascript"></script>
+		<link href="../assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript" src="../assets/scripts.js"></script>
         <title>Veterinaria Patita</title>
     </head>
     <body>
@@ -17,7 +17,7 @@
             <!-- Inicio Cabecera del Sistema -->
             <div id="encabezado" class="span-24 last">				
                 <div id="logo" class="span-24 last">
-                    <img src="assets/logo.png" />
+                    <img src="../assets/logo.png" />
                 </div>
                 <!--div id="aplicacion" class="span-7 last">
                     Nombre de la Aplicaci&oacute;n
@@ -26,29 +26,20 @@
             </div>
             <!-- Fin Cabecera del Sistema -->
 
- <div id="center_col">
- 
-<h3><a href="/customers/index">Clientes</a></h3>
-
-</div>
-
 			<!-- Inicio Menu del Sistema -->
 				<div class="span-24 last">
 					<div id="TabbedPanels1" class="TabbedPanels">
 					  <ul class="TabbedPanelsTabGroup">
-						<li class="TabbedPanelsTab TabbedPanelsTabSelected" tabindex="0">
+						<li class="TabbedPanelsTab" tabindex="0">
 							<a href="#">Citas de Vacunas y Tareas</a>
 						</li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="/patients/index">Pacientes</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="/prospectus/index">Prospectos</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="/doctors/index">Doctores</a></li>
+							<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:pacientes();">Pacientes</a></li>
+						<li class="TabbedPanelsTab"  tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
+						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:prospectos();">Prospectos</a></li>
+						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:doctores();">Doctores</a></li>
 					  </ul>
 					  <div class="TabbedPanelsContentGroup">
-						<div class="TabbedPanelsContent TabbedPanelsContentVisible" style="display: block; ">
-							<a href="#">Vacunas Programadas</a> | 
-							<a href="#">Tareas Asignadas</a> 
-						</div>
+						&nbsp;
 						<div class="TabbedPanelsContent" style="display: none; ">
 						&nbsp;
 						</div>
@@ -64,27 +55,11 @@
 					  </div>
 					</div>
 				</div>
-				<!--
-                <div id="barra-naranja" class="span-24 last">&nbsp;</div>
-                <div id="barra-blanca" class="span-24 last">                
-                    <ul class="menu-1">
-                        <li class="active"><a href="#">Citas de Vacunas y Tareas</a></li>
-                        <li><a href="#">Pacientes</a></li>
-						<li><a href="#">Due&ntilde;os</a></li>
-						<li><a href="#">Prospectos</a></li>
-						<li><a href="#">Doctores</a></li>
-                    </ul>
-                </div>
-                <div id="barra-blanca" class="span-24 last">                    
-					<ul class="menu-2">
-						<li class="active"><a href="#">Vacunas Programadas</a></li>
-                        <li><a href="#">Tareas Asignadas</a></li>
-					</ul>
-                </div>-->
+				
 				<div class="span-24 last">
 					<ul class="menu-3">
-						<li><a href="#">Calendario</a></li> 
-						<li><a href="#" class="active">Nueva Cita</a></li> 
+						<li><%= link_to 'Nuevo Cliente', new_customer_path %></li> 
+						
 					</ul>
 				</div>
             <!-- Fin Menu del Sistema -->
@@ -93,18 +68,16 @@
             <div class="span-24 last">
 				<h3>Listado de Clientes</h3>
 			</div>
-			<div class="span-24 last">
-				<h4>Datos Generales</h4>
-			</div>				
+					
 			<div id="formulario" class="span-24 last">				
-				<table>
+				<table border=1>
 				  <tr>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Address</th>
-					<th>Image</th>
-					<th>Phone</th>
-					<th>Cell phone</th>
+					<th>Nombre</th>
+					<th>Correo</th>
+					<th>Direccion</th>
+					<th>Foto</th>
+					<th>Telefono</th>
+					<th>Celular</th>
 					<th></th>
 					<th></th>
 					<th></th>
@@ -124,9 +97,7 @@
 				  </tr>
 				<% end %>
 
-				<tr>
-				  <td align="left"> <h3><%= link_to 'Nuevo Cliente', new_customer_path %> </h3></td>
-				</tr>
+			
 				</table>
 
 				<br />

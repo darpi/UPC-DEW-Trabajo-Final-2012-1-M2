@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../assets/ie.css" type="text/css">
-        <link rel="stylesheet" href="../assets/print.css" type="text/css">
-        <link rel="stylesheet" href="../assets/screen.css" type="text/css">
-        <link rel="stylesheet" href="../assets/styles.css" type="text/css">
-		<script src="../assets/SpryTabbedPanels.js" type="text/javascript"></script>
-		<link href="../assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
-        <script language="JavaScript" src="../assets/scripts.js"></script>
+        <link rel="stylesheet" href="../../assets/ie.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/print.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/screen.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/styles.css" type="text/css">
+		<script src="../../assets/SpryTabbedPanels.js" type="text/javascript"></script>
+		<link href="../../assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript" src="../../assets/scripts.js"></script>
         <title>Veterinaria Patita</title>
     </head>
     <body>
@@ -17,7 +17,7 @@
             <!-- Inicio Cabecera del Sistema -->
             <div id="encabezado" class="span-24 last">				
                 <div id="logo" class="span-24 last">
-                    <img src="../assets/logo.png" />
+                    <img src="../../assets/logo.png" />
                 </div>
                 <!--div id="aplicacion" class="span-7 last">
                     Nombre de la Aplicaci&oacute;n
@@ -66,52 +66,64 @@
 			
             <!-- Inicio Cuerpo de la Pagina -->
             <div class="span-24 last">
-		<h3>Listado de Pacientes</h3>
+				<%= form_for(@patient) do |f| %>
+			  <% if @patient.errors.any? %>
+				<div id="error_explanation">
+				  <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
 
-			<table>
-			  <tr>
-				<th>Propietario</th>
-				<th>Especie</th>
-				<th>Raza</th>
-				<th>Genero</th>
-				<th>Tipo Sanguineo</th>
-				<th>Esterelizado</th>
-				<th>Talla</th>
-				<th>Actividad</th>
-				<th>Peso</th>
-				<th>Fecha Nacimiento</th>
-			   
-				<th></th>
-				<th></th>
-				<th></th>
-			  </tr>
+				  <ul>
+				  <% @patient.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				  <% end %>
+				  </ul>
+				</div>
+			  <% end %>
 
-			<% @patients.each do |patient| %>
-			  <tr>
-				<td><%= patient.customer.name %></td>
-				<td><%= patient.species %></td>
-				<td><%= patient.race %></td>
-				<td><%= patient.gender %></td>
-				<td><%= patient.blood_type %></td>
-				<td><%= patient.sterilized %></td>
-				<td><%= patient.size %></td>
-				<td><%= patient.activity %></td>
-				<td><%= patient.weight %></td>
-				<td><%= patient.date_of_birth %></td>
-			   
-				
-				<td><%= link_to 'Ver Detalle', patient %></td>
-				<td><%= link_to 'Editar', edit_patient_path(patient) %></td>
-				<td><%= link_to 'Eliminar', patient, confirm: 'Esta seguro de eliminar el registro?', method: :delete %></td>
-			  </tr>
+			  <div class="field">
+				<%= f.label :Propietario %><br />
+				<%= f.collection_select :customer_id, Customer.all, :id, :name, :prompt => true %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Especie %><br />
+				<%= f.text_field :species %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Raza %><br />
+				<%= f.text_field :race %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Genero %><br />
+				<%= f.text_field :gender %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Tipo_Sangre %><br />
+				<%= f.text_field :blood_type %>
+			  </div>
+			  <div class="field">
+			   <%= f.label :Esta_Esterilizado %><br />
+			   <%= f.text_field :sterilized %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Tamano %><br />
+				<%= f.text_field :size %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Actividad %><br />
+				<%= f.text_field :activity %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Peso %><br />
+				<%= f.number_field :weight %>
+			  </div>
+			  <div class="field">
+				<%= f.label :Fecha_Nacimiento %><br />
+				<%= f.date_select :date_of_birth %>
+			  </div>
+			 
+			  <div class="actions">
+				<%= f.submit %>
+			  </div>
 			<% end %>
-		
-			</table>
-
-			<br />
-
-			<%= link_to 'Regresar a Home', homes_path %>
-
 			</div>
 	
 			<script type="text/javascript">

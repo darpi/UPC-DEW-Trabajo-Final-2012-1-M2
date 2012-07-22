@@ -2,6 +2,18 @@ function clientes(){
 	window.location = "/customers/index";
 }
 
+function pacientes(){
+	window.location = "/patients/index";
+}
+
+function prospectos(){
+	window.location = "/prospectus/index";
+}
+
+function doctores(){
+	window.location = "/doctors/index";
+}
+
 //Login.jsp
 
 function login(){

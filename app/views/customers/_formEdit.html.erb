@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../assets/ie.css" type="text/css">
-        <link rel="stylesheet" href="../assets/print.css" type="text/css">
-        <link rel="stylesheet" href="../assets/screen.css" type="text/css">
-        <link rel="stylesheet" href="../assets/styles.css" type="text/css">
-		<script src="../assets/SpryTabbedPanels.js" type="text/javascript"></script>
-		<link href=../"assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
-        <script language="JavaScript" src="../assets/scripts.js"></script>
+        <link rel="stylesheet" href="../../assets/ie.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/print.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/screen.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/styles.css" type="text/css">
+		<script src="../../assets/SpryTabbedPanels.js" type="text/javascript"></script>
+		<link href="../../assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript" src="../../assets/scripts.js"></script>
         <title>Veterinaria Patita</title>
     </head>
     <body>
@@ -17,7 +17,7 @@
             <!-- Inicio Cabecera del Sistema -->
             <div id="encabezado" class="span-24 last">				
                 <div id="logo" class="span-24 last">
-                    <img src="../assets/logo.png" />
+                    <img src="../../assets/logo.png" />
                 </div>
                 <!--div id="aplicacion" class="span-7 last">
                     Nombre de la Aplicaci&oacute;n
@@ -65,83 +65,53 @@
             <!-- Fin Menu del Sistema -->
 			
             <!-- Inicio Cuerpo de la Pagina -->
-       
-			<p id="notice"><%= notice %></p>
+           
+			<%= form_for(@customer) do |f| %>
+				  <% if @customer.errors.any? %>
+					<div id="error_explanation">
+					  <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
 
-				<p>
-				  <b>Nombre:</b>
-				  <%= @customer.name %>
-				</p>
+					  <ul>
+					  <% @customer.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					  <% end %>
+					  </ul>
+					</div>
+				  <% end %>
 
-				<p>
-				  <b>Email:</b>
-				  <%= @customer.email %>
-				</p>
-
-				<p>
-				  <b>Direccion:</b>
-				  <%= @customer.address %>
-				</p>
-
-				<p>
-				  <b>Image:</b>
-				  <%= @customer.image %>
-				</p>
-
-				<p>
-				  <b>TelefonoCasa:</b>
-				  <%= @customer.phone %>
-				</p>
-
-				<p>
-				  <b>Numero Celular:</b>
-				  <%= @customer.cell_phone %>
-				</p>	
-			
-				<p>
-				 
-				  <table border="1">
-				     <tr>
-                  <td colspan=3>
-				<b> Listado de Mascotas:</b>
-				  </td>
-				   <tr>
-                  <td>
-				  Especie
-				  </td>
-				     <td>
-				  Raza
-				  </td>
-				     <td>
-				  Genero
-				  </td>
-				  </tr>
-				  
-				  <tr>
-                  <td>
-					  <% @customer.patients.each do |patient| %>
-					  <li><%= patient.species %></li>
-					  <%end%>
-				  </td>
-				   <td>
-					  <% @customer.patients.each do |patient| %>
-					  <li><%= patient.race %></li>
-					  <%end%>
-				  </td>
-				   <td>
-					  <% @customer.patients.each do |patient| %>
-					  <li><%= patient.gender %></li>
-					  <%end%>
-				  </td>
-				  </tr>
-				  
-				  </table>
-				</p>	
+				  <div class="field">
+					<%= f.label :Nombre %><br />
+					<%= f.text_field :name %>
+				  </div>
+				  <div class="field">
+					<%= f.label :email %><br />
+					<%= f.text_field :email %>
+				  </div>
+				  <div class="field">
+					<%= f.label :Direccion %><br />
+					<%= f.text_field :address %>
+				  </div>
+				  <div class="field">
+					<%= f.label :Foto %><br />
+					<%= f.text_field :image %>
+				  </div>
+				  <div class="field">
+					<%= f.label :Telefono %><br />
+					<%= f.text_field :phone %>
+				  </div>
+				  <div class="field">
+					<%= f.label :Celular %><br />
+					<%= f.text_field :cell_phone %>
+				  </div>
+				  <div class="actions">
+					<%= f.submit %>
+				  </div>
+				<% end %>
 				
-
-				<%= link_to 'Edicion', edit_customer_path(@customer) %> |
+				
 				<%= link_to 'Regresar', customers_path %>
-
+				
+				
 			<script type="text/javascript">
 			var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 			

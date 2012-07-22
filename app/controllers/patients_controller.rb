@@ -25,7 +25,10 @@ class PatientsController < ApplicationController
   # GET /patients/new.json
   def new
     @patient = Patient.new
-
+	@esterilizado = [['Si', 'Si'], ['No', 'No']]
+	@actividad = [['Baja', 'Baja'], ['Media', 'Media'], ['Alta', 'Alta']]
+	@tamano = [['Pequeno', 'Pequeno'], ['Mediano', 'Mediano'], ['Grande', 'Grande']]
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @patient }
