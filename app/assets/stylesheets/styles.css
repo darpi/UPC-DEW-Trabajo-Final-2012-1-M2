@@ -1,6 +1,28 @@
 div#encabezado{
-    background-color: #1C4100;
+	background-color: #1C4100;
 }
+div#logo{
+    background-color: #1C4100;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+div#barra-amarilla{
+    height: 30px;
+    background-color: #F1C949;
+	padding-bottom: 5px;
+}
+div#barra-amarilla table tr td{
+    text-align: right;
+	
+}
+div#banner{
+	margin: 10px 5px;
+	color: #BB3513;
+	font-weight: bold;
+}
+
+
 div#aplicacion{
     padding: 50px 0px;
     font-family: Calibri;
@@ -9,41 +31,29 @@ div#aplicacion{
     text-align: left;
     color: #FFFFFF;
 }
-div#logo{
-    background-color: #1C4100;
-    text-align: left;
-    color: #FFFFFF;
-}
-img.pipe{
-    margin-left: 10px;
-    margin-right: 4px;
-}
+
 div#usuario{
-    background-color: #FFFFFF;	
+    background-color: #F1C949;	
     text-align: right;
-    border-bottom: 1px solid #FFFFFF;
-    color: #000066;
-    font-family: Verdana, Arial, Helvetica, sans-serif;	
-    font-size: 9px;
+    color: #000000;
+    font-family: Calibri;	
+    font-size: 12px;
+	display: block;
+	font-weight: bold;
 }
 div#usuario a{
     color: #000066;
-    font-family: Verdana, Arial, Helvetica, sans-serif;	
-    font-size: 9px;
+    font-family: Calibri;	
+    font-size: 11px;
     font-weight: normal;
+	font-weight: bold;
     text-decoration: none;
+	padding-left: 5px;
 }
 div#usuario a:hover{
     text-decoration: underline;
 }
-div#barra-naranja{
-    height: 7px;
-    background-color: #E9B206;
-}
-div#barra-blanca{
-    /*border-bottom: 1px solid #fff;*/
-    height: 20px;
-}
+
 div#pie{
     padding-top: 1em;
     border-top: 1px solid #CBDFC8;
@@ -56,84 +66,91 @@ div#pie{
     text-decoration: none;
 	background-color: #F1C949;
 }
+
+.loginForm{
+	font-weight: bold;
+}
+
 /*
 ** Menus de navegacion
 */
-ul.menu-1 {
-    padding: 0 0 0 1em;
-    line-height: normal;
-    background-color: #E9B206;
-    border-bottom: 0px solid #FA0;
-    color: #fff;
-    margin: 0;
+.barra-menu {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	clear: none;
+	width: 100%;
 }
-ul.menu-1 li {
-    display: inline;
-    margin: 0px 5px 0 0;
+.menu-1 {
+	margin: 0px;
+	padding: 0px;
 }
-ul.menu-1 li a {
-    border-bottom: 1px none #fff;
-    padding: 0 1em;
-    text-decoration: none;
-    font-family: Calibri;
-    font-size: 13px;
-    color: #222;
+.menu-1 li{
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 4px 10px;
+	margin: 0px 1px 0px 0px;
+	font: bold 1em calibri;
+	background-color: #DDD;
+	list-style: none;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #F1C949;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
 }
-ul.menu-1 li a:hover {
-    text-decoration: underline;	
+.menu-1 li  a{
+	text-decoration: none;
+	color: black;
 }
-ul.menu-1 li.active a {
-    background-color: #fff;
-    border: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    color: #BB3513;
+.menu-1 li  a:hover{
+	text-decoration: none;
+	color: #BB3513;
 }
-ul.menu-2 {
-    border-collapse: collapse;
-    padding: 0 0 0 1em; /* LTR */
-    white-space: nowrap;
-    list-style: none;
-    margin: 5px 0;
-    height: auto;
-    line-height: normal;
-    border-bottom: 1px solid #bbb;
-	background-color: #fff;
+li.active {
+	background-color: #F1C949;
+	border-bottom: 1px solid #F1C949;
 }
-ul.menu-2 li {
-    display: inline;
+li.active a{
+	text-decoration: none;
+	color: black;
 }
-ul.menu-2 li a {
-    border-left: 1px solid #bbb;
-    border-right: 1px solid #bbb;
-    border-top: 1px solid #bbb;
-    border-bottom: 1px none #bbb;
-    background-color: #ddd;
-    height: auto;
-    margin-right: 0.5em; /* LTR */
-    padding: 0 0.5em;
-    text-decoration: none;
-    font-family: Calibri;
-    font-size: 13px;
-    color: #555555;
+li.active a:hover{
+	text-decoration: none;
+	color: black;
 }
-ul.menu-2 li a:hover {
-    background-color: #eee;
-    border-color: #ccc;
-    border-bottom-color: #eee;
-    color: #555555;
+.menu-2 {
+	clear: both;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	border-top: solid 1px #F1C949;
+	border-right: solid 1px #F1C949;
+	background-color: #F1C949;
 }
-ul.menu-2 li.active a {
-    background-color: #fff;
-    border: 1px solid #bbb;
-    border-bottom: #fff 1px solid;
-    color: #1C4100;
+.menu-2 div {
+	overflow: hidden;
+	padding: 4px 0px;
+	display: none;
 }
-ul.menu-2 li.active a:hover {
-    background-color: #fff;
-    border: 1px solid #bbb;
-    border-bottom: #fff 1px solid;
-    color: #00992B;
+.menu-2 div.active {
+	display: block;
 }
+.menu-2 div a{
+	text-decoration: none;
+	color: #BB3513;
+	padding: 10px;
+	font: bold 1em calibri;
+}
+
+.menu-2 div a:hover{
+	text-decoration: underline;
+	color: #BB3513;
+	padding: 10px;
+}
+
 
 ul.menu-3 {
     border-bottom: 1px solid #bbb;

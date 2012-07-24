@@ -27,7 +27,7 @@
             <!-- Fin Cabecera del Sistema -->
 
 			<!-- Inicio Menu del Sistema -->
-				<div class="span-24 last">
+				<!--div class="span-24 last">
 					<div id="TabbedPanels1" class="TabbedPanels">
 					  <ul class="TabbedPanelsTabGroup">
 						<li class="TabbedPanelsTab" tabindex="0">
@@ -61,6 +61,25 @@
 						<li><%= link_to 'Nuevo Doctor', new_doctor_path %></li> 
 						
 					</ul>
+				</div-->
+				<div class="span-24 last">
+					<div class="barra-menu span-24 last">
+						<ul class="menu-1">
+							<li><a href="#">Citas de Vacunas y Tareas</a></li>
+							<li><a href="/patients/index">Pacientes</a></li>
+							<li><a href="/customers/index">Clientes</a></li>
+							<li><a href="/prospectus/index">Prospectos</a></li>
+							<li class="active"><a href="/doctors/index">Doctores</a></li>
+						</ul>
+						<div class="menu-2 span-24 last">
+							<div class="span-16 active">
+								<%= link_to 'Nuevo Doctor', new_doctor_path %>
+							</div>
+							<div id="usuario" class="span-8 last">
+								Usuario: Dora Arpi | <a href="#">Cerrar Sessi&oacute;n</a>
+							</div>
+						</div>
+					</div>
 				</div>
             <!-- Fin Menu del Sistema -->
 			
@@ -103,10 +122,10 @@
 			  </div>
 			<% end %>						
 				<%= link_to 'Regresar', doctors_path %>
-			<script type="text/javascript">
+			<!--script type="text/javascript">
 			var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 			
-			  </script>
+			  </script-->
             <!-- Fin Cuerpo de la Pagina -->
 
             <!-- Inicio Pie del Sistema --> 
