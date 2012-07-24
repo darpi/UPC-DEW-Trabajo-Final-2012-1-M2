@@ -33,8 +33,8 @@
 						<li class="TabbedPanelsTab" tabindex="0">
 							<a href="#">Citas de Vacunas y Tareas</a>
 						</li>
-							<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:pacientes();">Pacientes</a></li>
-						<li class="TabbedPanelsTab"  tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
+					    <li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:pacientes();">Pacientes</a></li>
+						<li class="TabbedPanelsTab TabbedPanelsTabSelected"  tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
 						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:prospectos();">Prospectos</a></li>
 						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:doctores();">Doctores</a></li>
 					  </ul>
@@ -46,7 +46,7 @@
 						<div class="TabbedPanelsContent" style="display: none; ">
 							&nbsp;
 						</div>
-						<div class="TabbedPanelsContent" style="display: none; ">
+						<div class="TabbedPanelsContent" style="display: block; ">
 							&nbsp;
 						</div>
 						<div class="TabbedPanelsContent" style="display: none; ">
@@ -59,7 +59,6 @@
 				<div class="span-24 last">
 					<ul class="menu-3">
 						<li><%= link_to 'Nuevo Cliente', new_customer_path %></li> 
-						
 					</ul>
 				</div>
             <!-- Fin Menu del Sistema -->
