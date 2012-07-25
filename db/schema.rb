@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120724232435) do
+ActiveRecord::Schema.define(:version => 20120725040113) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(:version => 20120724232435) do
     t.string   "cell_phone"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "vaccines", :force => true do |t|
