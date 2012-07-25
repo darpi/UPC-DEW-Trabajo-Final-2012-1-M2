@@ -14,6 +14,10 @@ function doctores(){
 	window.location = "/doctors/index";
 }
 
+function vacunas(){
+	window.location = "/vaccines/index";
+}
+
 //Login.jsp
 
 function login(){

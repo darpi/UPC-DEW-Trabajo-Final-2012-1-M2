@@ -27,98 +27,74 @@
             <!-- Fin Cabecera del Sistema -->
 
 			<!-- Inicio Menu del Sistema -->
-				<!--div class="span-24 last">
-					<div id="TabbedPanels1" class="TabbedPanels">
-					  <ul class="TabbedPanelsTabGroup">
-						<li class="TabbedPanelsTab" tabindex="0">
-							<a href="#">Citas de Vacunas y Tareas</a>
-						</li>
-					    <li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:pacientes();">Pacientes</a></li>
-						<li class="TabbedPanelsTab"  tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:prospectos();">Prospectos</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:doctores();">Doctores</a></li>
-					  </ul>
-					  <div class="TabbedPanelsContentGroup">
-						&nbsp;
-						<div class="TabbedPanelsContent" style="display: none; ">
-						&nbsp;
-						</div>
-						<div class="TabbedPanelsContent" style="display: none; ">
-							&nbsp;
-						</div>
-						<div class="TabbedPanelsContent" style="display: none; ">
-							&nbsp;
-						</div>
-						<div class="TabbedPanelsContent" style="display: none; ">
-							&nbsp;
-						</div>
-					  </div>
-					</div>
-				</div>
 				
-				<div class="span-24 last">
-					<ul class="menu-3">
-						<li><%= link_to 'Nuevo Doctor', new_doctor_path %></li> 
-						
-					</ul>
-				</div-->
 				<div class="span-24 last">
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
-							<li><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
+						    <li class="active"><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
 							<li><a href="/patients/index">Pacientes</a></li>
 							<li><a href="/customers/index">Clientes</a></li>
 							<li><a href="/prospectus/index">Prospectos</a></li>
-							<li class="active"><a href="/doctors/index">Doctores</a></li>
+							<li><a href="/doctors/index">Doctores</a></li>
 						</ul>
 						<div class="menu-2 span-24 last">
 							<div class="span-16 active">
-								<%= link_to 'Nuevo Doctor', new_doctor_path %>
+								<%= link_to 'Nueva Vacuna', new_vaccine_path %>
 							</div>
 							<div id="usuario" class="span-8 last">
 								Usuario: Dora Arpi | <a href="#">Cerrar Sessi&oacute;n</a>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>			
+				
+			
             <!-- Fin Menu del Sistema -->
 			
             <!-- Inicio Cuerpo de la Pagina -->
-            <div class="span-24 last">
-				<h3>Listado de Doctores</h3>
-			</div>
-					
+           
 			<div id="formulario" class="span-24 last">				
-				<table>
-				  <tr>
-					<th>Nombre</th>
-					<th>Apellido</th>
-					<th>Mail</th>
-					<th>Telefono</th>
-					<th>Usuario</th>
-					<th></th>
-					<th></th>
-					<th></th>
-				  </tr>
 
-				<% @doctors.each do |doctor| %>
-				  <tr>
-					<td><%= doctor.administrator %></td>
-					<td><%= doctor.name_surname %></td>
-					<td><%= doctor.mail %></td>
-					<td><%= doctor.phone %></td>
-					<td><%= doctor.user %></td>
-					<td><%= link_to 'Ver Detalle', doctor %></td>
-					<td><%= link_to 'Editar', edit_doctor_path(doctor) %></td>
-					<td><%= link_to 'Eliminar', doctor, confirm: 'Are you sure?', method: :delete %></td>
-				  </tr>
-				<% end %>
+			<p id="notice"><%= notice %></p>
 
-				</table>
+<p>
+  <b>Vacuna:</b>
+  <%= @vaccine.name %>
+</p>
 
-				<br />
+<p>
+  <b>Paciente:</b>
+  <%= @vaccine.patients.name %>
+</p>
 
-				<%= link_to 'Regresar a Home', homes_path %>
+<p>
+  <b>Cliente:</b>
+  <%= @vaccine.customers.name %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @vaccine.phone %>
+</p>
+
+<p>
+  <b>Direccion:</b>
+  <%= @vaccine.address %>
+</p>
+
+<p>
+  <b>Fecha_Vacuna:</b>
+  <%= @vaccine.date %>
+</p>
+
+
+<%= link_to 'Editar', edit_vaccine_path(@vaccine) %> |
+<%= link_to 'Regresar', vaccines_path %>
+
+
+			<br />
+
+		
 				
 			</div>
 	
