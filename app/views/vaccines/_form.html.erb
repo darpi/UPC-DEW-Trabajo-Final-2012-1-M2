@@ -74,13 +74,13 @@
 				  </div>
 
 				   <div class="field">
-					<%= f.label :Paciente %><br />
-					<%= f.collection_select :patient_id, Patient.all, :id, :name, :prompt => true %>
+					<%= f.label :patient %><br />
+					<%= f.collection_select :patients_id, Patient.all, :id, :race, :prompt => true %>
 				  </div>
 				  
 				   <div class="field">
-				    <%= f.label :Propietario %><br />
-				    <%= f.collection_select :customer_id, Customer.all, :id, :name, :prompt => true %>
+				    <%= f.label :customer %><br />
+				    <%= f.collection_select :customers_id, Customer.all, :id, :name, :prompt => true %>
 			       </div>
 
 				  <div class="field">
@@ -100,7 +100,7 @@
 				  </div>
 				<% end %>
 
-				
+				<%= link_to 'Regresar', vaccines_path %>
 			</div>
 	
 			<!--script type="text/javascript">

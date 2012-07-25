@@ -61,8 +61,7 @@
 			<table>
 			  <tr>
 				<th>Nombre</th>
-				<th>Paciente</th>
-				<th>Cliente</th>
+
 				<th>Telefono</th>
 				<th>Direccion</th>
 				<th>Fecha</th>
@@ -74,8 +73,6 @@
 			<% @vaccines.each do |vaccine| %>
 			  <tr>
 				<td><%= vaccine.name %></td>
-				<td><%= vaccine.patients %></td>
-				<td><%= vaccine.customers %></td>
 				<td><%= vaccine.phone %></td>
 				<td><%= vaccine.address %></td>
 				<td><%= vaccine.date %></td>
@@ -86,9 +83,7 @@
 			<% end %>
 			</table>
 
-			<br />
-
-		
+			<br />	
 				
 			</div>
 	

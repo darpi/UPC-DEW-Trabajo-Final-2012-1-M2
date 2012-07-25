@@ -3,7 +3,7 @@ class VaccinesController < ApplicationController
   # GET /vaccines.json
   def index
     @vaccines = Vaccine.all
-
+ 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @vaccines }
@@ -14,7 +14,7 @@ class VaccinesController < ApplicationController
   # GET /vaccines/1.json
   def show
     @vaccine = Vaccine.find(params[:id])
-@vaccines = Vaccine.All
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @vaccine }
