@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-
+  belongs_to :doctor
+  
+  
   has_secure_password
 
   attr_accessible :email, :password, :password_confirmation
