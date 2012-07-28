@@ -18,6 +18,10 @@ function vacunas(){
 	window.location = "/vaccines/index";
 }
 
+function usuarios(){
+	window.location = "/users/index";
+}
+
 //Login.jsp
 
 function login(){

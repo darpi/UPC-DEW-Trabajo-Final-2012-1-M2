@@ -22,6 +22,7 @@ Mascot::Application.routes.draw do
   get "doctors/index"
   get "patients/index"
   get "prospectus/index"
+  get "users/index"
   
   
   resources :homes
@@ -35,6 +36,8 @@ Mascot::Application.routes.draw do
   resources :doctors
   
   resources :vaccines
+  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

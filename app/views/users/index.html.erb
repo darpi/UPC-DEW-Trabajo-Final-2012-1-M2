@@ -34,10 +34,10 @@
 							<a href="#">Citas de Vacunas y Tareas</a>
 						</li>
 					    <li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:pacientes();">Pacientes</a></li>
-						<li class="TabbedPanelsTab TabbedPanelsTabSelected"  tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
+						<li class="TabbedPanelsTab"  tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
 						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:prospectos();">Prospectos</a></li>
 						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:doctores();">Doctores</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:users();">Usuarios</a></li>
+						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:usuarios();">Usuarios</a></li>
 					  </ul>
 					  <div class="TabbedPanelsContentGroup">
 						&nbsp;
@@ -47,7 +47,7 @@
 						<div class="TabbedPanelsContent" style="display: none; ">
 							&nbsp;
 						</div>
-						<div class="TabbedPanelsContent" style="display: block; ">
+						<div class="TabbedPanelsContent" style="display: none; ">
 							&nbsp;
 						</div>
 						<div class="TabbedPanelsContent" style="display: none; ">
@@ -55,34 +55,89 @@
 						</div>
 					  </div>
 					</div>
+				</div>
+				
+				<div class="span-24 last">
+					<ul class="menu-3">
+						<li><%= link_to 'Nuevo Usuario', new_user_path %></li> 
+						
+					</ul>
 				</div-->
 				<div class="span-24 last">
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
-							<li><a href="#">Citas de Vacunas y Tareas</a></li>
+							<li><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
 							<li><a href="/patients/index">Pacientes</a></li>
-							<li class="active"><a href="/customers/index">Clientes</a></li>
+							<li><a href="/customers/index">Clientes</a></li>
 							<li><a href="/prospectus/index">Prospectos</a></li>
 							<li><a href="/doctors/index">Doctores</a></li>
-							<li><a href="/users">Usuarios</a></li>
-							<!-- <li><a href="/users/new">Usuarios</a></li> -->
+							<li class="active"><a href="/users/index">Usuarios</a></li>
 						</ul>
 						<div class="menu-2 span-24 last">
 							<div class="span-16 active">
-								
+								<%= link_to 'Nuevo Usuario', new_user_path %>
 							</div>
 							<div id="usuario" class="span-8 last">
 								Usuario: Dora Arpi | <a href="#">Cerrar Sessi&oacute;n</a>
 							</div>
 						</div>
 					</div>
-				</div>			
-				
-				
+				</div>
             <!-- Fin Menu del Sistema -->
 			
+            <!-- Inicio Cuerpo de la Pagina -->
+            <div class="span-24 last">
+				<h3>Listado de Usuarios</h3>
+			</div>
+					
+			<div id="formulario" class="span-24 last">				
+				<table>
+				  <tr>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Mail</th>
+					<th>Telefono</th>
+					<th>Usuario</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				  </tr>
+
+				<% @users.each do |user| %>
+				  <tr>
+					<td><%= user.email %></td>
+					<td><%= user.email %></td>
+					<td><%= user.email %></td>
+					<td><%= user.email %></td>
+					<td><%= user.email %></td>
+					<td><%= link_to 'Ver Detalle', user %></td>
+					<td><%= link_to 'Editar', edit_user_path(user) %></td>
+					<td><%= link_to 'Eliminar', user, confirm: 'Are you sure?', method: :delete %></td>
+					<!-- <td><%= link_to 'Crear Usuario', new_user_path(user) %></td> --> 
+					
+				  </tr>
+				<% end %>
+
+				</table>
+
+				<br />
+
+				<%= link_to 'Regresar a Home', homes_path %>
+				
+			</div>
+	
+			<!--script type="text/javascript">
+			var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+			
+			  </script-->
+            <!-- Fin Cuerpo de la Pagina -->
+
+            <!-- Inicio Pie del Sistema --> 
+            <div id="pie" class="span-24 last">
+                Derechos Reservados
+            </div>
+            <!-- Fin Pie del Sistema --> 
         </div>
     </body>
 </html>
- 
 
