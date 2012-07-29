@@ -23,11 +23,12 @@ function usuarios(){
 }
 
 //Login.jsp
-
+//enviarFormulario("frmLogin");
 function login(){
     if(validarTextoRequerido('cousucodigo')){
         if(validarTextoRequerido('nousuclave')){
-            enviarFormulario("frmLogin");
+            
+			enviarFormulario("http://localhost:3000/vaccines/index");
         }
     }
 }

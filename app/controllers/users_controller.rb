@@ -22,6 +22,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def enter
+    
+  end
   
   
    # Inicio Real

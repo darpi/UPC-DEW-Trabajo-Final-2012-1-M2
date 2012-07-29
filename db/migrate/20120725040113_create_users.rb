@@ -7,7 +7,13 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_reset_token
       t.datetime :password_reset_sent_at
 
+	  t.references :doctor
+	  
       t.timestamps
     end
+	
+	add_index :users, :doctor_id
+	
   end
 end
+

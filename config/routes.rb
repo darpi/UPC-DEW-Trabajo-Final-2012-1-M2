@@ -12,9 +12,9 @@ Mascot::Application.routes.draw do
 
   match 'signup', to: 'users#new', as: 'signup'
 
-  #root :to => "homes#index"
+  root :to => "homes#index"
   
-  root :to => "webs#index"
+  #root :to => "webs#index"
   
   get "vaccines/index"
   get "homes/index"
