@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120725040113) do
+ActiveRecord::Schema.define(:version => 20120804153148) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20120725040113) do
     t.string   "user"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "homes", :force => true do |t|
@@ -74,9 +82,12 @@ ActiveRecord::Schema.define(:version => 20120725040113) do
     t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.integer  "doctor_id"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
   end
+
+  add_index "users", ["doctor_id"], :name => "index_users_on_doctor_id"
 
   create_table "vaccines", :force => true do |t|
     t.string   "name"
