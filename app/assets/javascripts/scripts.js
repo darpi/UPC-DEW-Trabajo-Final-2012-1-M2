@@ -22,6 +22,10 @@ function usuarios(){
 	window.location = "/users/index";
 }
 
+function calendar(){
+	window.location = "/calendar/index";
+}
+
 //Login.jsp
 //enviarFormulario("frmLogin");
 function login(){
