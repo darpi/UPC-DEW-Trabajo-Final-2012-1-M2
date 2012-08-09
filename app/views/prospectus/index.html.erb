@@ -105,14 +105,6 @@
 				  </tr>
 
 				<% @prospectus.each do |prospectu| %>
-				
-				  <% customer = Customer.new %>					
-				  <% customer.name = prospectu.name %>
-				  <% customer.email = prospectu.email %>
-				  <% customer.address = prospectu.address %>
-				  <% customer.image = prospectu.image %>
-				  <% customer.phone = prospectu.phone %>
-				  <% customer.cell_phone = prospectu.cell_phone %>
 			  
 				  <tr>
 					<td><%= prospectu.name %></td>
@@ -121,10 +113,9 @@
 					<td><%= prospectu.image %></td>
 					<td><%= prospectu.phone %></td>
 					<td><%= prospectu.cell_phone %></td>
-					<td><%= link_to 'Ver Detalle', prospectu %></td>
-					<td><%= link_to 'Editar', edit_prospectu_path(prospectu) %></td>
+					<td><%= link_to 'Ver Detalles', prospectu %></td>
+					<td><%= link_to 'Cambiar a Cliente', edit_prospectu_path(prospectu) %></td>
 					<td><%= link_to 'Eliminar', prospectu, confirm: 'Esta seguro de eliminar el prospecto?', method: :delete %></td>
-				    <td><%= link_to 'Cambiar a Dueño', prospectu, confirm: 'Esta seguro de cambiar el prospecto a dueño?', method: customer.save %></td>
 				  </tr>
 				<% end %>
 		

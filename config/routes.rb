@@ -1,6 +1,7 @@
 Mascot::Application.routes.draw do
 
   resources :events
+  
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
@@ -17,7 +18,6 @@ Mascot::Application.routes.draw do
   match 'signup', to: 'users#new', as: 'signup'
 
   root :to => "homes#index"
-  
   #root :to => "webs#index"
   
   get "vaccines/index"
