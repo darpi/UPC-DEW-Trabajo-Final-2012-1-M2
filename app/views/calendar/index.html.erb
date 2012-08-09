@@ -1,6 +1,70 @@
-<!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
-<%= stylesheet_link_tag "event_calendar" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../assets/ie.css" type="text/css">
+        <link rel="stylesheet" href="../assets/print.css" type="text/css">
+        <link rel="stylesheet" href="../assets/screen.css" type="text/css">
+        <link rel="stylesheet" href="../assets/styles.css" type="text/css">
+		<script src="../assets/SpryTabbedPanels.js" type="text/javascript"></script>
+		<link href="../assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript" src="../assets/scripts.js"></script>
+        <title>Veterinaria Patita</title>
+    </head>
+    <body>
+        <div class="container-page">
 
-<h1>Calendar</h1>
+            <!-- Inicio Cabecera del Sistema -->
+            <div id="encabezado" class="span-24 last">				
+                <div id="logo" class="span-24 last">
+                    <img src="../assets/logo.png" />
+                </div>
+                <!--div id="aplicacion" class="span-7 last">
+                    Nombre de la Aplicaci&oacute;n
+                </div-->
+                				
+            </div>
+            <!-- Fin Cabecera del Sistema -->
 
-<%= raw(event_calendar) %>
+			<!-- Inicio Menu del Sistema -->				
+				<div class="span-24 last">
+					<div class="barra-menu span-24 last">
+						<ul class="menu-1">
+						    <li><a href="/vaccines">Citas de Vacunas</a></li>
+							<li class="active"><a href="/events/index">Citas de Eventos</a></li>
+							<li><a href="/patients/index">Pacientes</a></li>
+							<li><a href="/customers/index">Clientes</a></li>
+							<li><a href="/prospectus/index">Prospectos</a></li>
+							<li><a href="/doctors/index">Doctores</a></li>
+							<li><a href="/users">Usuarios</a></li>
+						</ul>
+						<div class="menu-2 span-24 last">
+							<div class="span-16 active">
+								<%= link_to 'Regresar Listado Eventos', events_path %>
+							</div>
+							<div id="usuario" class="span-8 last">
+								Usuario: Dora Arpi | <a href="#">Cerrar Sessi&oacute;n</a>
+							</div>
+						</div>
+					</div>
+				</div>
+            <!-- Fin Menu del Sistema -->
+			
+            <!-- Inicio Cuerpo de la Pagina -->
+            <div class="span-24 last">
+				<h3>Calendario de Eventos</h3>
+			</div>
+			<%= stylesheet_link_tag "event_calendar" %>
+		    <%= raw(event_calendar) %>
+            <!-- Fin Cuerpo de la Pagina -->
+
+            <!-- Inicio Pie del Sistema --> 
+            <div id="pie" class="span-24 last">
+                Derechos Reservados
+            </div>
+            <!-- Fin Pie del Sistema --> 
+        </div>
+    </body>
+</html>
+
+

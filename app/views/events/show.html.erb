@@ -1,20 +1,86 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../assets/ie.css" type="text/css">
+        <link rel="stylesheet" href="../assets/print.css" type="text/css">
+        <link rel="stylesheet" href="../assets/screen.css" type="text/css">
+        <link rel="stylesheet" href="../assets/styles.css" type="text/css">
+		<script src="../assets/SpryTabbedPanels.js" type="text/javascript"></script>
+		<link href="../assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript" src="../assets/scripts.js"></script>
+        <title>Veterinaria Patita</title>
+    </head>
+    <body>
+        <div class="container-page">
 
-<p>
-  <b>Name:</b>
-  <%= @event.name %>
-</p>
+            <!-- Inicio Cabecera del Sistema -->
+            <div id="encabezado" class="span-24 last">				
+                <div id="logo" class="span-24 last">
+                    <img src="../assets/logo.png" />
+                </div>
+                <!--div id="aplicacion" class="span-7 last">
+                    Nombre de la Aplicaci&oacute;n
+                </div-->
+                				
+            </div>
+            <!-- Fin Cabecera del Sistema -->
 
-<p>
-  <b>Start at:</b>
-  <%= @event.start_at %>
-</p>
+			<!-- Inicio Menu del Sistema -->				
+				<div class="span-24 last">
+					<div class="barra-menu span-24 last">
+						<ul class="menu-1">
+						    <li class="active"><a href="/vaccines">Citas de Vacunas</a></li>
+							<li><a href="/events/index">Citas de Eventos</a></li>
+							<li><a href="/patients/index">Pacientes</a></li>
+							<li><a href="/customers/index">Clientes</a></li>
+							<li><a href="/prospectus/index">Prospectos</a></li>
+							<li><a href="/doctors/index">Doctores</a></li>
+							<li><a href="/users">Usuarios</a></li>
+						</ul>
+						<div class="menu-2 span-24 last">
+							<div class="span-16 active">
+								<%= link_to 'Nuevo Evento', new_event_path %>
+							</div>
+							<div id="usuario" class="span-8 last">
+								Usuario: Dora Arpi | <a href="#">Cerrar Sessi&oacute;n</a>
+							</div>
+						</div>
+					</div>
+				</div>
+            <!-- Fin Menu del Sistema -->
+			
+            <!-- Inicio Cuerpo de la Pagina -->
+            <div class="span-24 last">
+				<h3>Detalle de Eventos</h3>
+			</div>
+					
+			<p id="notice"><%= notice %></p>
+				<p>
+				  <b>Nombre Tarea:</b>
+				  <%= @event.name %>
+				</p>
 
-<p>
-  <b>End at:</b>
-  <%= @event.end_at %>
-</p>
+				<p>
+				  <b>Fecha y Hora de Inicio:</b>
+				  <%= @event.start_at %>
+				</p>
+
+				<p>
+				  <b>Fecha y Hora de Fin:</b>
+				  <%= @event.end_at %>
+				</p>
+
+				<%= link_to 'Regresar al Listado', events_path %> | <%= link_to 'Ir Calendario de Eventos', calendar_path %>
+				
+            <!-- Fin Cuerpo de la Pagina -->
+            <!-- Inicio Pie del Sistema --> 
+            <div id="pie" class="span-24 last">
+                Derechos Reservados
+            </div>
+            <!-- Fin Pie del Sistema --> 
+        </div>
+    </body>
+</html>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
