@@ -1,6 +1,5 @@
 class Event < ActiveRecord::Base
-  has_event_calendar  
-  attr_accessible :end_at, :name, :start_at
-  
+  belongs_to :customer
+  has_event_calendar
+  attr_accessible :end_at, :name, :start_at , :customer_id
 end
-

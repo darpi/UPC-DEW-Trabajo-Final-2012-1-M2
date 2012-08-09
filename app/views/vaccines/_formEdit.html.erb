@@ -26,16 +26,16 @@
             </div>
             <!-- Fin Cabecera del Sistema -->
 
-			<!-- Inicio Menu del Sistema -->
-				
+			<!-- Inicio Menu del Sistema -->				
 				<div class="span-24 last">
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
-						    <li class="active"><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
+						    <li class="active"><a href="/vaccines">Citas de Vacunas y Tareas</a></li>
 							<li><a href="/patients/index">Pacientes</a></li>
 							<li><a href="/customers/index">Clientes</a></li>
 							<li><a href="/prospectus/index">Prospectos</a></li>
 							<li><a href="/doctors/index">Doctores</a></li>
+							<li><a href="/users">Usuarios</a></li>
 						</ul>
 						<div class="menu-2 span-24 last">
 							<div class="span-16 active">
@@ -46,64 +46,57 @@
 							</div>
 						</div>
 					</div>
-				</div>			
-				
-			
+				</div>
             <!-- Fin Menu del Sistema -->
 			
             <!-- Inicio Cuerpo de la Pagina -->
-           
-			<div id="formulario" class="span-24 last">				
-	
-				<%= form_for(@vaccine) do |f| %>
-				  <% if @vaccine.errors.any? %>
-					<div id="error_explanation">
-					  <h2><%= pluralize(@vaccine.errors.count, "error") %> prohibited this vaccine from being saved:</h2>
-
-					  <ul>
-					  <% @vaccine.errors.full_messages.each do |msg| %>
-						<li><%= msg %></li>
-					  <% end %>
-					  </ul>
-					</div>
-				  <% end %>
-
-				  <div class="field">
-					<%= f.label :name %><br />
-					<%= f.text_field :name %>
-				  </div>
-				  <div class="field">
-					<%= f.label :patients %><br />
-					<%= f.text_field :patients %>
-				  </div>
-				  <div class="field">
-					<%= f.label :customers %><br />
-					<%= f.text_field :customers %>
-				  </div>
-				  <div class="field">
-					<%= f.label :phone %><br />
-					<%= f.text_field :phone %>
-				  </div>
-				  <div class="field">
-					<%= f.label :address %><br />
-					<%= f.text_field :address %>
-				  </div>
-				  <div class="field">
-					<%= f.label :date %><br />
-					<%= f.date_select :date %>
-				  </div>
-				  <div class="actions">
-					<%= f.submit %>
-				  </div>
-				<% end %>
-
-				
+            <div class="span-24 last">
+				<h3>Edicion de una Cita de Vacunacion</h3>
 			</div>
-	
-			<!--script type="text/javascript">
-			var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-			
-			  </script-->
+					
+			<%= form_for(@vaccine) do |f| %>
+			  <% if @vaccine.errors.any? %>
+				<div id="error_explanation">
+				  <h2><%= pluralize(@vaccine.errors.count, "error") %> prohibited this vaccine from being saved:</h2>
+
+				  <ul>
+				  <% @vaccine.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				  <% end %>
+				  </ul>
+				</div>
+			  <% end %>
+
+			  <div class="field">
+				<%= f.label :name %><br />
+				<%= f.text_field :name %>
+			  </div>
+			  <div class="field">
+					<%= f.label :patient %><br />
+					<%= f.collection_select :patients_id, Patient.all, :id, :race, :prompt => true %>
+		      </div>
+				  
+			  <div class="field">
+				    <%= f.label :customer %><br />
+				    <%= f.collection_select :customers_id, Customer.all, :id, :name, :prompt => true %>
+			  </div>
+			  <div class="field">
+				<%= f.label :phone %><br />
+				<%= f.text_field :phone %>
+			  </div>
+			  <div class="field">
+				<%= f.label :address %><br />
+				<%= f.text_field :address %>
+			  </div>
+			  <div class="field">
+				<%= f.label :date %><br />
+				<%= f.date_select :date %>
+			  </div>
+			  <div class="actions">
+				<%= f.submit "Guardar Cita"%>
+			  </div>
+			<% end %>
+
             <!-- Fin Cuerpo de la Pagina -->
 
             <!-- Inicio Pie del Sistema --> 

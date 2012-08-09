@@ -26,16 +26,16 @@
             </div>
             <!-- Fin Cabecera del Sistema -->
 
-			<!-- Inicio Menu del Sistema -->
-				
+			<!-- Inicio Menu del Sistema -->				
 				<div class="span-24 last">
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
-						    <li class="active"><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
+						    <li class="active"><a href="/vaccines">Citas de Vacunas y Tareas</a></li>
 							<li><a href="/patients/index">Pacientes</a></li>
 							<li><a href="/customers/index">Clientes</a></li>
 							<li><a href="/prospectus/index">Prospectos</a></li>
 							<li><a href="/doctors/index">Doctores</a></li>
+							<li><a href="/users">Usuarios</a></li>
 						</ul>
 						<div class="menu-2 span-24 last">
 							<div class="span-16 active">
@@ -46,62 +46,42 @@
 							</div>
 						</div>
 					</div>
-				</div>			
-				
-			
+				</div>
             <!-- Fin Menu del Sistema -->
 			
             <!-- Inicio Cuerpo de la Pagina -->
-           
-			<div id="formulario" class="span-24 last">				
-
-			<p id="notice"><%= notice %></p>
-
-				<p>
-				  <b>Vacuna:</b>
-				  <%= @vaccine.name %>
-				</p>
-
-				<p>
-				  <b>Paciente:</b>
-				  <%= @vaccine.patients.race %>
-				</p>
-
-				<p>
-				  <b>Cliente:</b>
-				  <%= @vaccine.customers.name %>
-				</p>
-
-				<p>
-				  <b>Telefono:</b>
-				  <%= @vaccine.phone %>
-				</p>
-
-				<p>
-				  <b>Direccion:</b>
-				  <%= @vaccine.address %>
-				</p>
-
-				<p>
-				  <b>Fecha_Vacuna:</b>
-				  <%= @vaccine.date %>
-				</p>
-
-
-				<%= link_to 'Editar', edit_vaccine_path(@vaccine) %> |
-				<%= link_to 'Regresar', vaccines_path %>
-
-
-			<br />
-
-		
-				
+            <div class="span-24 last">
+				<h3>Detalles de la Cita de Vacunacion</h3>
 			</div>
-	
-			<!--script type="text/javascript">
-			var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+					
+		<p id="notice"><%= notice %></p>
+
+			<p>
+			  <b>Nombre Vacuna :</b>
+			  <%= @vaccine.name %>
+			</p>
+
 			
-			  </script-->
+
+			<p>
+			  <b>Telefono:</b>
+			  <%= @vaccine.phone %>
+			</p>
+
+			<p>
+			  <b>Direccion:</b>
+			  <%= @vaccine.address %>
+			</p>
+
+			<p>
+			  <b>Fecha Vacunacion:</b>
+			  <%= @vaccine.date %>
+			</p>
+
+
+			<%= link_to 'Editar', edit_vaccine_path(@vaccine) %> |
+			<%= link_to 'Regresar al Listado', vaccines_path %>
+
             <!-- Fin Cuerpo de la Pagina -->
 
             <!-- Inicio Pie del Sistema --> 

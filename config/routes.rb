@@ -1,7 +1,9 @@
 Mascot::Application.routes.draw do
+  
 
   resources :events
-  
+
+  resources :vaccines
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
@@ -39,10 +41,10 @@ Mascot::Application.routes.draw do
   resources :prospectus
 
   resources :doctors
+    
+  resources :calendar
   
   resources :vaccines
-  
-  resources :calendar
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

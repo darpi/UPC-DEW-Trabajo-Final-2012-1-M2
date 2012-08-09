@@ -65,7 +65,7 @@
 				<div class="span-24 last">
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
-							<li><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
+							<li><a href="/vaccines">Citas de Vacunas y Tareas</a></li>
 							<li><a href="/patients/index">Pacientes</a></li>
 							<li><a href="/customers/index">Clientes</a></li>
 							<li class="active"><a href="/prospectus/index">Prospectos</a></li>
@@ -119,15 +119,6 @@
 				  <b>Celular:</b>
 				  <%= @prospectu.cell_phone %>
 				</p>
-
-				  <% customer = Customer.new %>					
-				  <% customer.name = @prospectu.name %>
-				  <% customer.email = @prospectu.email %>
-				  <% customer.address = @prospectu.address %>
-				  <% customer.image = @prospectu.image %>
-				  <% customer.phone = @prospectu.phone %>
-				  <% customer.cell_phone = @prospectu.cell_phone %>
-				  <% customer = customer.save %>		
 
 				<%= link_to 'Regresar', prospectus_path %>
 

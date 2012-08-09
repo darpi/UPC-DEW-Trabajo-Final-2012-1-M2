@@ -26,12 +26,11 @@
             </div>
             <!-- Fin Cabecera del Sistema -->
 
-			<!-- Inicio Menu del Sistema -->
-				
+			<!-- Inicio Menu del Sistema -->				
 				<div class="span-24 last">
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
-						    <li class="active"><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
+						    <li class="active"><a href="/vaccines">Citas de Vacunas y Tareas</a></li>
 							<li><a href="/patients/index">Pacientes</a></li>
 							<li><a href="/customers/index">Clientes</a></li>
 							<li><a href="/prospectus/index">Prospectos</a></li>
@@ -40,16 +39,14 @@
 						</ul>
 						<div class="menu-2 span-24 last">
 							<div class="span-16 active">
-								<%= link_to 'Nueva Vacuna', new_vaccine_path %>|<%= link_to 'Nueva Cita - Tarea', new_event_path %>
+								<%= link_to 'Nueva Vacuna', new_vaccine_path %>
 							</div>
 							<div id="usuario" class="span-8 last">
 								Usuario: Dora Arpi | <a href="#">Cerrar Sessi&oacute;n</a>
 							</div>
 						</div>
 					</div>
-				</div>			
-				
-			
+				</div>
             <!-- Fin Menu del Sistema -->
 			
             <!-- Inicio Cuerpo de la Pagina -->
@@ -57,15 +54,12 @@
 				<h3>Listado de Citas de Vacunacion</h3>
 			</div>
 					
-			<div id="formulario" class="span-24 last">				
-
 			<table>
 			  <tr>
-				<th>Nombre</th>
-
-				<th>Telefono</th>
+				<th>Nombre Vacuna</th>
+				<th>Telefono Propietario</th>
 				<th>Direccion</th>
-				<th>Fecha</th>
+				<th>Fecha Vacunacion</th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -77,21 +71,12 @@
 				<td><%= vaccine.phone %></td>
 				<td><%= vaccine.address %></td>
 				<td><%= vaccine.date %></td>
-				<td><%= link_to 'Detalle', vaccine %></td>
-				<td><%= link_to 'Editar', edit_vaccine_path(vaccine) %></td>
-				<td><%= link_to 'Eliminar', vaccine, confirm: 'Are you sure?', method: :delete %></td>
+				<td><%= link_to 'Show', vaccine %></td>
+				<td><%= link_to 'Edit', edit_vaccine_path(vaccine) %></td>
+				<td><%= link_to 'Destroy', vaccine, confirm: 'Esta seguro de eliminar la cita de vacunacion?', method: :delete %></td>
 			  </tr>
 			<% end %>
 			</table>
-            
-			<br />	
-				
-			</div>
-	
-			<!--script type="text/javascript">
-			var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-			
-			  </script-->
             <!-- Fin Cuerpo de la Pagina -->
 
             <!-- Inicio Pie del Sistema --> 
@@ -102,3 +87,5 @@
         </div>
     </body>
 </html>
+
+

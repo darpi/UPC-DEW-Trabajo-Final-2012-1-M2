@@ -1,101 +1,27 @@
+<h1>Listing events</h1>
 
+<table>
+  <tr>
+    <th>Nombre Evento</th>
+    <th>Fecha Hora Inicio</th>
+    <th>Fecha Hora Fin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../assets/ie.css" type="text/css">
-        <link rel="stylesheet" href="../assets/print.css" type="text/css">
-        <link rel="stylesheet" href="../assets/screen.css" type="text/css">
-        <link rel="stylesheet" href="../assets/styles.css" type="text/css">
-		<script src="../assets/SpryTabbedPanels.js" type="text/javascript"></script>
-		<link href="../assets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
-        <script language="JavaScript" src="../assets/scripts.js"></script>
-        <title>Veterinaria Patita</title>
-    </head>
-    <body>
-        <div class="container-page">
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.start_at %></td>
+    <td><%= event.end_at %></td>
+    <td><%= link_to 'Show', event %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
 
-            <!-- Inicio Cabecera del Sistema -->
-            <div id="encabezado" class="span-24 last">				
-                <div id="logo" class="span-24 last">
-                    <img src="../assets/logo.png" />
-                </div>
-                <!--div id="aplicacion" class="span-7 last">
-                    Nombre de la Aplicaci&oacute;n
-                </div-->
-                				
-            </div>
-            <!-- Fin Cabecera del Sistema -->
+<br />
 
-			<!-- Inicio Menu del Sistema -->
-				
-				<div class="span-24 last">
-					<div class="barra-menu span-24 last">
-						<ul class="menu-1">
-						    <li class="active"><a href="/vaccines/index">Citas de Vacunas y Tareas</a></li>
-							<li><a href="/patients/index">Pacientes</a></li>
-							<li><a href="/customers/index">Clientes</a></li>
-							<li><a href="/prospectus/index">Prospectos</a></li>
-							<li><a href="/doctors/index">Doctores</a></li>
-							<li><a href="/users">Usuarios</a></li>
-						</ul>
-						<div class="menu-2 span-24 last">
-							<div class="span-16 active">
-								<%= link_to 'Nueva Vacuna', new_vaccine_path %>|<%= link_to 'Nueva Cita - Tarea', new_event_path %>
-							</div>
-							<div id="usuario" class="span-8 last">
-								Usuario: Dora Arpi | <a href="#">Cerrar Sessi&oacute;n</a>
-							</div>
-						</div>
-					</div>
-				</div>			
-				
-			
-            <!-- Fin Menu del Sistema -->
-			
-            <!-- Inicio Cuerpo de la Pagina -->
-            <div class="span-24 last">
-				<h3>Listado de Citas de Tareas</h3>
-			</div>
-					
-			<div id="formulario" class="span-24 last">				
-
-			<table>
-			  <tr>
-				<th>Name</th>
-				<th>Start at</th>
-				<th>End at</th>
-				<th></th>
-				<th></th>
-				<th></th>
-			  </tr>
-
-			<% @events.each do |event| %>
-			  <tr>
-				<td><%= event.name %></td>
-				<td><%= event.start_at %></td>
-				<td><%= event.end_at %></td>
-				<td><%= link_to 'Mostrar', event %></td>
-				<td><%= link_to 'Editar', edit_event_path(event) %></td>
-				<td><%= link_to 'Eliminar', event, confirm: 'Esta seguro de eliminar?', method: :delete %></td>
-			  </tr>
-			<% end %>
-			</table>
-			<br />
-			</div>
-	
-			<!--script type="text/javascript">
-			var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-			
-			  </script-->
-            <!-- Fin Cuerpo de la Pagina -->
-
-            <!-- Inicio Pie del Sistema --> 
-            <div id="pie" class="span-24 last">
-                Derechos Reservados
-            </div>
-            <!-- Fin Pie del Sistema --> 
-        </div>
-    </body>
-</html>
+<%= link_to 'New Event', new_event_path %>

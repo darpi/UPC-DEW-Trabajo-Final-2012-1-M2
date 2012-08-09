@@ -2,16 +2,16 @@
 
 one:
   name: MyString
-  patients: 
-  customers: 
+  patient: 
+  customer: 
   phone: MyString
   address: MyString
-  date: 2012-07-24
+  date: 2012-08-09
 
 two:
   name: MyString
-  patients: 
-  customers: 
+  patient: 
+  customer: 
   phone: MyString
   address: MyString
-  date: 2012-07-24
+  date: 2012-08-09

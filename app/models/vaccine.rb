@@ -1,4 +1,4 @@
 class Vaccine < ActiveRecord::Base
-  belongs_to :patients
-  belongs_to :customers
+  belongs_to :patient
+  belongs_to :customer
 end

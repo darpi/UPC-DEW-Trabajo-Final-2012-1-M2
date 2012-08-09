@@ -15,7 +15,7 @@ function doctores(){
 }
 
 function vacunas(){
-	window.location = "/vaccines/index";
+	window.location = "/vaccines";
 }
 
 function usuarios(){
