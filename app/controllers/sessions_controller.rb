@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-      #redirect_to homes_path, :notice => "Logged in!"
-	  redirect_to vaccines_path, :notice => "Logged in!"
+      redirect_to homes_path, :notice => "Logged in!"
+	  #redirect_to vaccines_path, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
       render "new"
@@ -23,8 +23,8 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-      #redirect_to homes_path, :notice => "Logged in!"
-      redirect_to vaccines_path, :notice => "Logged in!"
+      redirect_to homes_path, :notice => "Logged in!"
+      #redirect_to vaccines_path, :notice => "Logged in!"
 	else
       flash.now.alert = "Invalid email or password"
       render "new"
