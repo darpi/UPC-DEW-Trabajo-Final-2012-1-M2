@@ -1,9 +1,8 @@
-require './Customer'
+describe 'DELETE' do
 
- describe Customer do
- 	before do
-		@customer = Customer.new
-	end
+  before do
+	@customer = Customer.new
+  end
 	
   it "can be instantiated" do
     Customer.new.should be_an_instance_of(Customer)
