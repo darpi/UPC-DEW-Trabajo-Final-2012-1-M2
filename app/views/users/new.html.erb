@@ -67,7 +67,7 @@
 						  
 									<div class="field">	
 									 <%= f.label :Doctor %><br />	 
-									 <%= f.collection_select :doctor_id, Doctor.all, :id, :name_surname, :prompt => true %>	
+                                         <%= f.collection_select :doctor_id, Doctor.where(:administrator => 'Si'), :id, :name_surname, :prompt => true %>									 
 									</div>
 
 						  
