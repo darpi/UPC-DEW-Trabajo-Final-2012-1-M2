@@ -30,7 +30,7 @@
 
 					<div class="container">
 					  <div class="row center">
-						<h2 style="margin-bottom: 20px;">Ingresar al Sistema</h2>
+						<center><h2 style="margin-bottom: 20px;">Ingresar al Sistema</h2></center>
 					  </div>
 					  <div class="row">
 						<div class="span4 offset4 well">
@@ -38,12 +38,12 @@
 							<fieldset>
 							  <legend></legend>
 							  <div class="control-group">
-								<%= label_tag :Usuario, nil ,class: "control-label" %>
-								<div class="controls"><%= text_field_tag :email, params[:email], class: "input-xlarge" %></div>
+								<center><%= label_tag :Usuario, nil ,class: "control-label" %></center>
+								<center><div class="controls"><%= text_field_tag :email, params[:email], class: "input-xlarge" %></div></center>
 							  </div>
 							  <div class="control-group">
-								<%= label_tag :password, nil, class: "control-label"  %>
-								<div class="controls"><%= password_field_tag (:password), nil ,class: "input-xlarge" %></div>
+								<center><%= label_tag :password, nil, class: "control-label"  %></center>
+								<center><div class="controls"><%= password_field_tag (:password), nil ,class: "input-xlarge" %></div></center>
 							  </div>
 							  
 							  <!--  <div class="control-group"> -->
@@ -52,7 +52,7 @@
 							  <!--  </div> -->     
 							  
 							  <!--  <div class="actions"><%= link_to  t("user.log_in", default: "Entrar"), class: "btn btn-large btn-primary"%></div> -->
-								<div class="actions"><%= submit_tag t("user.log_in", default: "Entrar"), class: "btn btn-large btn-primary" %></div>
+								<center><div class="actions"><%= submit_tag t("user.log_in", default: "Entrar"), class: "btn btn-large btn-primary" %></div></center>
 							</fieldset>
 						  <% end %>
 							<!-- <%= link_to t("user.forgotten_password", default: "Forgotten password?"), new_password_reset_path %> - <%= link_to t("user.sign_up", default: "Sign Up"), new_user_path %> -->
