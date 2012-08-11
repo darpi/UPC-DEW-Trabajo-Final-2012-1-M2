@@ -36,14 +36,13 @@
 							<li><a href="/customers/index">Clientes</a></li>
 							<li><a href="/prospectus/index">Prospectos</a></li>
 							<li><a href="/doctors/index">Doctores</a></li>
-							<li><a href="/users">Usuarios</a></li>
 						</ul>
 						<div class="menu-2 span-24 last">
 							<div class="span-16 active">
 								<%= link_to 'Nuevo Evento', new_event_path %>
 							</div>
 							<div id="usuario" class="span-8 last">
-								Usuario: Dora Arpi | <a href="/">Cerrar Sessi&oacute;n</a>
+								<a href="/">Cerrar Sessi&oacute;n</a>
 							</div>
 						</div>
 					</div>
@@ -69,17 +68,17 @@
 			  <% end %>
 
 			  <div class="field">
-				<%= f.label :name %><br />
+				<%= f.label :"Fecha de Evento" %><br />
 				<%= f.text_field :name %>
 			  </div>
 			  
 			  <div class="field">
-				<%= f.label :start_at %><br />
+				<%= f.label :"Fecha/Hora Inicio" %><br />
 				<%= f.datetime_select :start_at %>
 			  </div>
 			  
 			  <div class="field">
-				<%= f.label :end_at %><br />
+				<%= f.label :"Fecha/Hora Fin" %><br />
 				<%= f.datetime_select :end_at %>
 			  </div>
 			  

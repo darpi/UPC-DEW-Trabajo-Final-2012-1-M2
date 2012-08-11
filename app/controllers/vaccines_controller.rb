@@ -44,7 +44,7 @@ class VaccinesController < ApplicationController
 
     respond_to do |format|
       if @vaccine.save
-        format.html { redirect_to @vaccine, notice: 'Vaccine was successfully created.' }
+        format.html { redirect_to @vaccine, notice: 'La cita de vacunacion se creo satisfactoriamente' }
         format.json { render json: @vaccine, status: :created, location: @vaccine }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class VaccinesController < ApplicationController
 
     respond_to do |format|
       if @vaccine.update_attributes(params[:vaccine])
-        format.html { redirect_to @vaccine, notice: 'Vaccine was successfully updated.' }
+        format.html { redirect_to @vaccine, notice: 'La cita de vacunacion se actualizo satisfactoriamente' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

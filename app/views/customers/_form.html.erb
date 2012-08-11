@@ -27,40 +27,7 @@
             <!-- Fin Cabecera del Sistema -->
 
 			<!-- Inicio Menu del Sistema -->
-				<!--div class="span-24 last">
-					<div id="TabbedPanels1" class="TabbedPanels">
-					  <ul class="TabbedPanelsTabGroup">
-		
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:vacunas();">Citas y Vacunas</a></li>
-					    <li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:pacientes();">Pacientes</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:clientes();">Clientes</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:prospectos();">Prospectos</a></li>
-						<li class="TabbedPanelsTab" tabindex="0"><a href="#" onclick="javascript:doctores();">Doctores</a></li>
-						  </ul>
-					  <div class="TabbedPanelsContentGroup">
-						&nbsp;
-						<div class="TabbedPanelsContent" style="display: none; ">
-						&nbsp;
-						</div>
-						<div class="TabbedPanelsContent" style="display: none; ">
-							&nbsp;
-						</div>
-						<div class="TabbedPanelsContent" style="display: none; ">
-							&nbsp;
-						</div>
-						<div class="TabbedPanelsContent" style="display: none; ">
-							&nbsp;
-						</div>
-					  </div>
-					</div>
-				</div-->
-				
-				<!--div class="span-24 last">
-					<ul class="menu-3">
-						<li><%= link_to 'Nuevo Cliente', new_customer_path %></li> 
-						
-					</ul>
-				</div-->
+			
 				<div class="span-24 last">
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
@@ -76,7 +43,7 @@
 								<%= link_to 'Nuevo Cliente', new_customer_path %>
 							</div>
 							<div id="usuario" class="span-8 last">
-								Usuario: Dora Arpi | <a href="/">Cerrar Sessi&oacute;n</a>
+								<a href="/">Cerrar Sessi&oacute;n</a>
 							</div>
 						</div>
 					</div>
@@ -123,7 +90,7 @@
 					<%= f.text_field :cell_phone %>
 				  </div>
 				  <div class="actions">
-					<%= f.submit %>
+					<%= f.submit "Crear Cliente" %>
 				  </div>
 				<% end %>
 				
