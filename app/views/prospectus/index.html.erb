@@ -55,8 +55,9 @@
 				<h3>Listado de Prospectos</h3>
 			</div>
 					
-			<div id="formulario" class="span-24 last">				
-				<table>
+		<div id="informacion" class="span-24 last">
+			<table>
+				<thead>
 				  <tr>
 					<th>Nombre</th>
 					<th>Email</th>
@@ -68,7 +69,8 @@
 					<th></th>
 					<th></th>
 				  </tr>
-
+			</thead>
+			<tbody>
 				<% @prospectus.each do |prospectu| %>
 			  
 				  <tr>
@@ -83,12 +85,10 @@
 					<td><%= link_to 'Eliminar', prospectu, confirm: 'Esta seguro de eliminar el prospecto?', method: :delete %></td>
 				  </tr>
 				<% end %>
-		
+		        </tbody>
 				</table>
 
 				<br />
-
-				<%= link_to 'Regresar a Home', homes_path %>
 
 			</div>
 	

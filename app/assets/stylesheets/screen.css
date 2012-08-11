@@ -61,7 +61,9 @@ dl dt {font-weight:bold;}
 dd {margin-left:1.5em;}
 table {margin-bottom:1.4em;width:100%;}
 th {font-weight:bold;}
-thead th {background:#006;color:#fff;}
+thead th {background:#1C4100;color:#fff;text-align:center;}
+thead th  a{color:#fff;}
+thead th  a:hover{color:#F1C949;}
 td {padding: 2px 0px;text-align: left;height:30px;}
 tfoot {font-style:italic;}
 caption {background:#eee;}

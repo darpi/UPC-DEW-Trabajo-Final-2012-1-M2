@@ -54,18 +54,20 @@
 				<h3>Listado de Doctores</h3>
 			</div>
 					
-			<div id="formulario" class="span-24 last">				
-				<table>
+			<div id="informacion" class="span-24 last">
+			<table>
+				<thead>
 				  <tr>
 					<th>Administrador?</th>
-					<th>Nombre_Apellido </th>
+					<th>Nombre </th>
 					<th>Mail</th>
 					<th>Telefono</th>
 					<th></th>
 					<th></th>
 					<th></th>
 				  </tr>
-
+			</thead>
+			<tbody>
 				<% @doctors.each do |doctor| %>
 				  <tr>
 					<td><%= doctor.administrator %></td>
@@ -79,13 +81,9 @@
 					
 				  </tr>
 				<% end %>
-
+                </tbody>
 				</table>
-
 				<br />
-
-				<%= link_to 'Regresar a Home', homes_path %>
-				
 			</div>
 	
 			<!--script type="text/javascript">

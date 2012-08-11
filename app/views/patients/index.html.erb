@@ -51,9 +51,12 @@
 			
             <!-- Inicio Cuerpo de la Pagina -->
             <div class="span-24 last">
-		<h3>Listado de Pacientes</h3>
-
+				<h3>Listado de Pacientes</h3>
+			</div>
+			
+			<div id="informacion" class="span-24 last">
 			<table>
+				<thead>
 			  <tr>
 				<th>Propietario</th>
 				<th>Especie</th>
@@ -70,7 +73,8 @@
 				<th></th>
 				<th></th>
 			  </tr>
-
+			</thead>
+			<tbody>
 			<% @patients.each do |patient| %>
 			  <tr>
 				<td><%= patient.customer.name %></td>
@@ -90,7 +94,7 @@
 				<td><%= link_to 'Eliminar', patient, confirm: 'Esta seguro de eliminar el registro?', method: :delete %></td>
 			  </tr>
 			<% end %>
-		
+		  </tbody>
 			</table>
 
 			<br />

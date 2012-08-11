@@ -31,7 +31,7 @@
 					<div class="barra-menu span-24 last">
 						<ul class="menu-1">
 						    <li><a href="/vaccines">Citas de Vacunas</a></li>
-							<li class="active"><a href="/events/index">Citas de Eventos</a></li>
+							<li class="active"><a href="/events">Citas de Eventos</a></li>
 							<li><a href="/patients/index">Pacientes</a></li>
 							<li><a href="/customers/index">Clientes</a></li>
 							<li><a href="/prospectus/index">Prospectos</a></li>
@@ -53,31 +53,35 @@
             <div class="span-24 last">
 				<h3>Listado de Eventos</h3>
 			</div>
-					
-			<table>
-			  <tr>
-				<th>Nombre Evento</th>
-				<th>Fecha Hora Inicio</th>
-				<th>Fecha Hora Fin</th>
-				<th></th>
-				<th></th>
-				<th></th>
-			  </tr>
-
-			<% @events.each do |event| %>
-			  <tr>
-				<td><%= event.name %></td>
-				<td><%= event.start_at %></td>
-				<td><%= event.end_at %></td>
-				<td><%= link_to 'Show', event %></td>
-				<td><%= link_to 'Edit', edit_event_path(event) %></td>
-				<td><%= link_to 'Destroy', event, confirm: 'Esta seguro de eliminar el evento?', method: :delete %></td>
-			  </tr>
-
-			<% end %>
-			</table>
-			
-			<%= link_to 'Ver Calendario de Eventos', calendar_path %>
+			<div id="informacion" class="span-24 last">
+				<table>
+					<thead>
+						<tr>
+							<th>Nombre Evento</th>
+							<th>Fecha Hora Inicio</th>
+							<th>Fecha Hora Fin</th>
+							<th></th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @events.each do |event| %>
+							<tr>
+								<td><%= event.name %></td>
+								<td><%= event.start_at %></td>
+								<td><%= event.end_at %></td>
+								<td><%= link_to 'Show', event %></td>
+								<td><%= link_to 'Edit', edit_event_path(event) %></td>
+								<td><%= link_to 'Destroy', event, confirm: 'Esta seguro de eliminar el evento?', method: :delete %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+			<div id="enlace" class="span-24 last">
+				<%= link_to 'Ver Calendario de Eventos', calendar_path %>
+			</div>
             <!-- Fin Cuerpo de la Pagina -->
             <!-- Inicio Pie del Sistema --> 
             <div id="pie" class="span-24 last">

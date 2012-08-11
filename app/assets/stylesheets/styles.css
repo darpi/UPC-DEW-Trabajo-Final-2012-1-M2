@@ -191,16 +191,20 @@ div#informacion{
     border-top: 1px solid lightGray;
 }
 div#informacion table {
-    width: 710px;
+    width: 900px;
     margin: 10px 0px 5px 10px;
     padding: 0px 0px 0px 0px;
     border: 1px solid lightGray;
 }
-table thead tr th, table tbody tr td{
+div#informacion table thead tr th{
     padding-left: 5px;
+	text-align: left;
 }
 div#informacion table tbody tr.even td, div#informacion table tbody tr:nth-child(even) td {
     background:#e5ecf9;
+}
+div#enlace a{
+	margin: 10px 0px 5px 10px;
 }
 td.cell-label{
     text-align: left;

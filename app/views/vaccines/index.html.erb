@@ -54,7 +54,9 @@
 				<h3>Listado de Citas de Vacunacion</h3>
 			</div>
 					
+			<div id="informacion" class="span-24 last">
 			<table>
+			<thead>
 			  <tr>
 				<th>Nombre Vacuna</th>
 				<th>Telefono Propietario</th>
@@ -64,7 +66,8 @@
 				<th></th>
 				<th></th>
 			  </tr>
-
+			</thead>
+			<tbody>
 			<% @vaccines.each do |vaccine| %>
 			  <tr>
 				<td><%= vaccine.name %></td>
@@ -76,6 +79,7 @@
 				<td><%= link_to 'Destroy', vaccine, confirm: 'Esta seguro de eliminar la cita de vacunacion?', method: :delete %></td>
 			  </tr>
 			<% end %>
+		</tbody>
 			</table>
             <!-- Fin Cuerpo de la Pagina -->
 
