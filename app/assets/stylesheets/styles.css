@@ -190,6 +190,10 @@ div#informacion{
     text-align: left;
     border-top: 1px solid lightGray;
 }
+div#informacion img{
+    width: 74px;
+	height: 82px;
+}
 div#informacion table {
     width: 900px;
     margin: 10px 0px 5px 10px;
